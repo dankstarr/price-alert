@@ -1,1 +1,2 @@
 collection = 'alerts'
+test='test'

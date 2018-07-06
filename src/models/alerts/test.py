@@ -31,4 +31,3 @@ def luckyNumbers(a, b):
         a=a+1
     return found
 
-print(luckyNumbers(487162823133062956,681177519744583339))
