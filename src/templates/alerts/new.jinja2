@@ -1,0 +1,28 @@
+{% extends "base.jinja2" %}
+
+{% block content %}
+    <form action="{{ url_for('balert.create_alert') }}" method="post">
+        <div class="container">
+            <div class="form-group">
+                <div >
+                    <label for="name">Enter Item name</label>
+                    <input type="text" id="name" name="name"  class="form-control" placeholder="Enter Name">
+
+                </div>
+                <div >
+                    <label for="url">Enter Item URL</label>
+                    <input type="text" id="url" name="url"  class="form-control" placeholder="http://...">
+
+                </div>
+                <div >
+                    <label for="limit">Alert limit</label>
+                    <input type="text" id="limit" name="limit"  class="form-control" placeholder="45.00">
+                    <small class="form-text text-muted">We'll send you an email if the price goes below this</small>
+
+                </div>
+                <button type="submit" class="btn btn-success" style="margin-top:10px; margin-left:10px">Submit</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </div>
+    {% include "html_dependencies.html" %}
+
+</head>
+<body>
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">Pricing</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('bstore.stores') }}">Stores</a>
+                </li>
+            </ul>
+
+            {% if session['email'] %}
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('balert.alerts') }}">Alerts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('buser.logout') }}">Log Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('buser.user') }}">User Profile</a>
+                    </li>
+
+                    {% block nav %}
+                    {% endblock %}
+
+                </ul>
+
+
+            {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('buser.login') }}">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('buser.register') }}">Register</a>
+                    </li>
+
+                </ul>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+
+</nav>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

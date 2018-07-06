@@ -1,0 +1,36 @@
+{% extends 'base.jinja2' %}
+{% block content %}
+    <div class="container">
+
+        <div class="form-group">
+            <form method="post" class="form-group " action="{{ url_for('bstore.create') }}">
+                <div>
+                    <label for="name">Enter Store Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter store Name">
+                </div>
+                <div>
+                    <label for="headers">Enter Headers in JSON if any</label>
+                    <input type="text" class="form-control" name="headers" id="headers" placeholder="http://...">
+                    <small class="muted">headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
+                        (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
+                    </small>
+                </div>
+                <div>
+                    <label for="url">Enter URL prefix</label>
+                    <input type="text" class="form-control" name="url" id="url" placeholder="http://...">
+                </div>
+                <div>
+                    <label for="tag">Enter Tag</label>
+                    <input type="text" class="form-control" name="tag" id="tag" placeholder="p or div or span">
+                </div>
+                <div>
+                    <label for="query">Enter Query is JSON format</label>
+                    <input type="text" class="form-control" name="query" id="query"
+                           placeholder='{"class" : "form form-control"}'>
+                </div>
+                <button type="submit" class="btn btn-success" style="margin-top:20px">Submit</button>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

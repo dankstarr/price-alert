@@ -1,0 +1,13 @@
+{% extends "base.jinja2" %}
+
+
+{% block content %}
+
+    <div class="container">
+
+        <h4>User email is: {{ alert.user_email }}</h4>
+        <p>Price Limit is: {{ alert.price_limit }}</p>
+        <p>Active status: {{ alert.active }}</p>
+        <p>Last checked: {{ alert.last_checked }}</p>
+    </div>
+{% endblock %}

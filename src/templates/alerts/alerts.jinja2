@@ -1,0 +1,25 @@
+{% extends "base.jinja2" %}
+
+{% block content %}
+    <div class="container">
+        <h1> Alerts
+            <small> showing price alerts</small>
+        </h1>
+        {% for alert in alerts %}
+            <div class="list-group">
+                <div class="list-group-item">
+                    <a href="{{ alert._id }}"
+                       class="list-group-item list-group-item-action flex-column align-items-start">
+                        <h1>{{ alert.get_itemobject_by_id(alert.item_id).name }}</h1>
+
+
+                        <p>Last price found: {{ alert.get_item_price() }}</p>
+                        <p>Last updated: {{ alert.last_checked }}</p></a>
+                </div>
+            </div>
+        {% endfor %}
+        <br>
+        <a class="btn btn-primary" href="{{ url_for('balert.create_alert') }}" style="margin:10px auto 30px">Create New
+            Alert</a>
+    </div>
+{% endblock %}

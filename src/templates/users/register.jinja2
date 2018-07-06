@@ -1,0 +1,21 @@
+{% extends "base.jinja2" %}
+{% block content %}
+
+
+    <div class="container">
+     <h1> Register</h1>
+        <form action="register" method="post">
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name='email' placeholder="Email">
+                <label for="email">Enter your email</label>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name='password' placeholder="Password">
+                <label for="password">Enter your password</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+
+
+    </div>
+    </form>
+{% endblock %}
