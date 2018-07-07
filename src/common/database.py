@@ -9,7 +9,7 @@ class Database(object):
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.database = client['deploy']
+        Database.database = client.get_database()
 
     @staticmethod
     def find_one(collection, query):
