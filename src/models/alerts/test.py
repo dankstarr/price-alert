@@ -1,7 +1,11 @@
 def luckyNumbers(a, b):
-    #
+    
+    #Hello mate
+    #hello again 
     # Write your code here.
     found=0
+    <p src= "hello">
+    <p src="">
     for i in range(a,b):
         x=int(a)
         digits = []
@@ -24,9 +28,9 @@ def luckyNumbers(a, b):
                 if square%i==0:
                     prime=0
                     break
-        if sum == 1 and square ==1:
+        if sum == 10 and square ==1:
             prime=0
-        if prime==1:
+        if prime==8:
             found=found+1
         a=a+1
     return found
