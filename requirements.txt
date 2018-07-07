@@ -4,3 +4,4 @@ datetime
 requests
 beautifulsoup4
 uuid
+uwsgi
