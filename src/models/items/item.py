@@ -50,7 +50,7 @@ class Item(object):
                 find = soup.find(store.tag_name, store.query)
                 if find is None:
                     return False
-                return float(find.text.strip()[1:])
+                return (find.text.strip()[1:])
         return False
 
 
