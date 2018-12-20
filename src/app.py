@@ -1,3 +1,4 @@
+import pyperclip
 from flask import Flask, make_response, render_template, session, request
 import src.models.users.views as Users
 from src.models.alerts.views import alert_blueprint
@@ -24,3 +25,7 @@ def db_init():
 @app.route('/')
 def home():
     return render_template('home.jinja2')
+
+@app.route('/drive')
+def drive():
+    return render_template('/drive/drivelink.jinja2', clip = pyperclip.paste())
