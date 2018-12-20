@@ -5,7 +5,4 @@ requests
 beautifulsoup4
 uuid
 uwsgi
-<<<<<<< HEAD
 pyperclip
-=======
->>>>>>> 4e407ca287df5c9038033c9fca8bfc3c08e98c0e
