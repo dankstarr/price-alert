@@ -1,6 +1,18 @@
-{% extends "base.jinja2" %}
+{% extends 'base.jinja2' %}
 {% block content %}
+    <div>
 
-    <h1>Your clipboard content is : {{ clip }}</h1>
+        <div class="form-group">
+            <form method="post" class="form-group " action="drive">
+                <label for="lines">Enter all the drive links to convert</label>
+                <br>
+                <textarea name="lines" id="lines" rows="10" cols="100"></textarea>
+                <br>
+
+                <input type="submit" class="btn btn-success">
+
+            </form>
+        </div>
+    </div>
 
 {% endblock %}

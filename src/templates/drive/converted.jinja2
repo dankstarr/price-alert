@@ -1,0 +1,12 @@
+{% extends "base.jinja2" %}
+
+{% block content %}
+    <div class="container">
+
+        <h1>Converted links are: </h1>
+        {% for i in lines %}
+            <p><a href={{ i }} target="_blank">{{ i }}</a></p>
+        {% endfor %}
+
+    </div>
+{% endblock %}

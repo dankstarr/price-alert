@@ -5,3 +5,4 @@ src/models/items/__pycache__/
 src/models/stores/__pycache__/
 src/models/users/__pycache__/
 src/common/__pycache__/
+src/common/database.py
