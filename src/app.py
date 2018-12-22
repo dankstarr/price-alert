@@ -32,10 +32,18 @@ def drive():
     if request.method == 'GET':
         return render_template('/drive/drivelink.jinja2', clip=pyperclip.paste())
     elif request.method == 'POST':
+
         lines = request.form['lines']
-        all = lines.split('\n')
+        if lines.count('export=downloadhttps://drive.google')>=1:
+            all = lines.split('https://')
+        else:
+            all = lines.split('\n')
         arr = []
+        all = filter(None, all)
+
         for i in all:
-            arr.append("https://drive.google.com/file/d/" + i.split("id=")[1].split('&export=download')[0] + "/view")
+            id = i.split("id=")[1]
+            id = id.split('&export=download')[0]
+            arr.append("https://drive.google.com/file/d/" + id + "/view")
         print(arr)
         return render_template('/drive/converted.jinja2', lines=arr)
