@@ -1,4 +1,3 @@
-import pyperclip
 from flask import Flask, make_response, render_template, session, request
 import src.models.users.views as Users
 from src.models.alerts.views import alert_blueprint
@@ -30,7 +29,7 @@ def home():
 @app.route('/drive', methods=['POST', 'GET'])
 def drive():
     if request.method == 'GET':
-        return render_template('/drive/drivelink.jinja2', clip=pyperclip.paste())
+        return render_template('/drive/drivelink.jinja2')
     elif request.method == 'POST':
 
         lines = request.form['lines']
